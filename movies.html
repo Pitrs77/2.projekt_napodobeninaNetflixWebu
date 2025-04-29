@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Další filmy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="movies.css" />
+  </head>
+  <body>
+    <!-- Button -->
+
+    <div class="center-container">
+      <button onclick="location.href='index.html'" class="index_btn">
+        Úvodní strana
+      </button>
+    </div>
+
+    <!-- Dropdown -->
+
+    <div class="dropdown">
+      <select id="movieSelect" onchange="search()">
+        <option value="" disabled selected>Vyberte možnost</option>
+        <option value="Girl">Girl</option>
+        <option value="Boy">Boy</option>
+        <option value="Avengers">Avengers</option>
+        <option value="Horor">Horor</option>
+      </select>
+    </div>
+
+    <!-- Selected API_movies -->
+
+    <div id="selectedMovie"></div>
+
+    <script src="dist/movies.js" defer></script>
+  </body>
+</html>

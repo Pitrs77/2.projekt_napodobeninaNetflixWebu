@@ -1,0 +1,103 @@
+/* Stylování - 'movies.html' */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-style: normal;
+  background-color: var(--background-color);
+}
+
+:root {
+  --red-code-color: rgb(214, 28, 28);
+  --background-color: black;
+  --font-color: white;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Button back to 'index.html' */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.index_btn {
+  color: var(--font-color);
+  background-color: var(--red-code-color);
+  width: 130px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* DropDown - styl roletky */
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.dropdown select {
+  padding: 5px 10px;
+  border: 1px solid var(--red-code-color);
+  border-radius: 3px;
+  background: rgb(30, 30, 30);
+  color: var(--font-color);
+  padding-bottom: 5px;
+
+  &:hover {
+    border: 1px solid lightcoral;
+  }
+}
+
+/* Selected API_movies */
+
+#selectedMovie {
+  height: calc(100vh - 75px);
+  transform: scale(0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: -40px;
+}
+
+.result-item {
+  width: auto;
+  height: fit-content;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1) rotate(-3deg);
+  }
+}
+
+.result-img {
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  rotate: 3deg;
+  object-fit: cover;
+}

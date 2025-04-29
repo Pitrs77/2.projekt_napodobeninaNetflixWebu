@@ -1,0 +1,295 @@
+/* Desktop first: Stylování - index.html */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red-code-color: rgb(214, 28, 28);
+  --background-color: black;
+  --font-color: white;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* Header-section */
+
+.header_container {
+  width: 100%;
+  height: 60px;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.header_logo {
+  width: 110px;
+  margin-left: 20px;
+}
+
+.reg_btn {
+  width: 80px;
+  height: 25px;
+  color: var(--font-color);
+  background-color: var(--red-code-color);
+  border: none;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* Scrollovací šípka */
+
+.fa-regular.fa-circle-up.icon {
+  display: none;
+  position: fixed;
+  font-size: 40px;
+  bottom: 20px;
+  right: 30px;
+  color: var(--red-code-color);
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.3s, transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+/* Main-section */
+
+.main_container {
+  width: auto;
+  height: calc(100vh - 60px);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), black),
+    url("dist/img/background.jpg");
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+}
+
+.main_text {
+  width: 505px;
+  color: var(--font-color);
+  line-height: 1.5;
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main_input {
+  width: 470px;
+  height: 30px;
+  background-color: var(--background-color);
+
+  margin: 20px;
+  border: var(--font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#myInput {
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  padding: 5px;
+  margin: 5px;
+  border: var(--font-color);
+  height: 45px;
+}
+
+#myInput:placeholder-shown {
+  width: 100%;
+  background-color: var(--background-color);
+  border: 1px solid var(--font-color);
+  padding: 5px;
+  margin: 5px;
+  height: 45px;
+}
+
+.main_btn {
+  width: 60px;
+  height: 45px;
+  color: var(--font-color);
+  background-color: var(--red-code-color);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+/* Gallery-section */
+
+.gallery_container {
+  width: auto;
+  height: 78vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gallery_wrapper {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery_item_image {
+  width: auto;
+  height: 370px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hover-image:hover {
+  object-position: center;
+  transition: transform 0.7s ease, filter 0.3s ease;
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 15px;
+}
+
+.movies_btn {
+  width: 100px;
+  height: 22px;
+  color: var(--font-color);
+  background-color: var(--red-code-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* Footer-section */
+
+.footer_container {
+  width: auto;
+  height: 30vh;
+  background-color: black;
+}
+
+.footer_list {
+  color: var(--font-color);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  line-height: 1.5;
+  gap: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: grey;
+  font-weight: normal;
+  font-size: 12px;
+
+  &:hover {
+    color: var(--red-code-color);
+  }
+}
+
+/* Media queries - responzivní úpravy pro menší obrazovky */
+
+@media (max-width: 768px) {
+  .main_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    top: 65%;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+  .main_input {
+    gap: 10px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 786px) {
+  .gallery_container {
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .gallery_wrapper {
+    justify-content: center;
+  }
+
+  .btn_container {
+    position: relative;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 786px) {
+  .footer_container {
+    height: auto;
+  }
+
+  .footer_list ul {
+    margin: 5px 35px;
+    width: 180px;
+  }
+}
